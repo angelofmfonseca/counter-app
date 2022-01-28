@@ -1,5 +1,6 @@
 import React from 'react';
-import WelcomeScreen from './pages/WelcomeScreen';
+import Router from './routes';
+import * as S from './styles';
 
 // const getCounters = () => fetch('/api/v1/counter', { method: 'get' }).then((res) => res.json());
 
@@ -12,9 +13,9 @@ const App = () => {
   // }, []);
 
   return (
-    <main style={{ padding: '32px' }}>
-      <WelcomeScreen />
-    </main>
+    <S.MainWrapper>
+      <Router />
+    </S.MainWrapper>
   );
 };
 

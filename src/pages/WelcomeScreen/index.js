@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { Button } from '../../components/atoms/Button';
 import * as S from './styles';
 
 const WelcomeScreen = () => {
@@ -12,7 +13,7 @@ const WelcomeScreen = () => {
           Capture cups of lattes, frapuccinos, or anything else that can be counted.
         </S.SubTitle>
       </S.TextWrapper>
-      <S.StartButton>GetStarted</S.StartButton>
+      <Button kind="raised">Get Started</Button>
     </S.Wrapper>
   );
 };

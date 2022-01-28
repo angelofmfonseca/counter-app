@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -12,6 +13,9 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 314px;
+  height: 132px;
+  margin: 103px 0 95px 0;
 `;
 
 export const Title = styled.span`
@@ -21,6 +25,6 @@ export const Title = styled.span`
   text-align: center;
 `;
 
-export const SubTitle = styled.p``;
-
-export const StartButton = styled.button``;
+export const SubTitle = styled.p`
+  text-align: center;
+`;

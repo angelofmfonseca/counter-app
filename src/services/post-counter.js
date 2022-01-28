@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const baseURL = '/api/v1/counter';
-
-export const getCounter = () => {
-  return axios
-    .get(baseURL)
+export const postCounter = () => {
+  axios
+    .post('/api/v1/counter', { title: 'paulo' })
     .then((res) => res.data)
     .catch((error) => console.log(`ERROR: ${error}`));
 };
