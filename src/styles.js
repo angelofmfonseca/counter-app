@@ -6,5 +6,4 @@ export const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 32px;
 `;

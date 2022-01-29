@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTotalTimes } from '../../../../../utils/get-total-times';
+import { getTotalTimes } from '../../../utils/get-total-times';
 import * as S from './styles';
 
 const ListTotal = ({ count }) => {

@@ -4,7 +4,7 @@ const baseURL = '/api/v1/counter';
 
 export const postCounter = async () => {
   try {
-    const res = await axios.post(baseURL, { title: 'buzios' });
+    const res = await axios.post(baseURL, { title: 'fernando de noronha' });
     return res;
   } catch (error) {
     console.log(`ERROR: ${error}`);

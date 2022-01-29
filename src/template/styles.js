@@ -1,16 +1,24 @@
 import styled from 'styled-components';
 
 export const TemplateWrapper = styled.div`
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 32px;
 `;
 
-export const SearchWrapper = styled.section``;
+export const ChildrenWrapper = styled.section`
+  overflow: auto;
+  flex: 1 1 100%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  margin: 20px 0 60px;
+`;
 
 export const AddCounterWrapper = styled.section`
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 32px;
+  right: 32px;
+  flex: 0 0 auto;
 `;

@@ -1,11 +1,9 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import Title from '../../atoms/Title';
 import SubTitle from '../../atoms/SubTitle';
-import { Loading } from '../../atoms/Loading';
-import List from '../../molecules/List';
+import ListItem from '../../molecules/ListItem';
+import ListTotal from '../../molecules/ListTotal';
 import * as S from './styles';
-import { getCounterInitialValue } from '../../../utils/get-counter-initial-value';
 
 const renderNoContent = () => {
   return (
@@ -20,35 +18,34 @@ const renderNoContent = () => {
   );
 };
 
-const renderLoading = () => {
-  return (
-    <S.LoadingWrapper>
-      <Loading />
-    </S.LoadingWrapper>
-  );
-};
-
-const renderContent = (count, numberOfCounters) => {
+const renderContent = (count) => {
   return (
     <S.ContentWrapper>
-      <List count={count} numberOfCounters={numberOfCounters} />
+      <ListTotal count={count} />
+      {count.map((eachCount) => (
+        <ListItem key={eachCount.id} eachCount={eachCount} count={count} />
+      ))}
     </S.ContentWrapper>
   );
 };
 
-const ManageScreen = ({ count, loading }) => {
-  if (count?.data?.length === 0) {
+const renderNoResults = () => {
+  return (
+    <S.NoResultsWrapper>
+      <Title title="No Results" color=" #888B90" fontSize="22px" fontWeight="500" />
+    </S.NoResultsWrapper>
+  );
+};
+
+const ManageScreen = ({ list, count }) => {
+  if (list === null) {
+    <>{renderNoResults()}</>;
+  }
+  if (list?.length === 0) {
     return <>{renderNoContent()}</>;
   }
-  if (loading) {
-    return <>{renderLoading()}</>;
-  }
-  if (count?.status !== 200 && count !== null) {
-    return <Navigate to="/error" />;
-  }
   if (count?.status === 200) {
-    const numberOfCounters = getCounterInitialValue(count?.data);
-    return <>{renderContent(count?.data, numberOfCounters)}</>;
+    return <>{renderContent(list)}</>;
   }
   return null;
 };

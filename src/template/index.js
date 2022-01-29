@@ -1,16 +1,14 @@
 import React from 'react';
-import { Input } from '../components/atoms/Input';
 import { Button } from '../components/atoms/Button';
 import { IncrementIcon } from '../assets/Icons';
+import Search from '../components/molecules/Search';
 import * as S from './styles';
 
-const Template = ({ children }) => {
+const Template = ({ children, searchFilter }) => {
   return (
     <S.TemplateWrapper>
-      <S.SearchWrapper>
-        <Input />
-      </S.SearchWrapper>
-      {children}
+      <Search searchFilter={searchFilter} />
+      <S.ChildrenWrapper>{children}</S.ChildrenWrapper>
       <S.AddCounterWrapper>
         <Button>
           <IncrementIcon fill="var(--white)" />

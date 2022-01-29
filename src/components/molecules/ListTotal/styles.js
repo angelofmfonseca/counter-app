@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const TotalWrapper = styled.div`
-  margin-top: 27px;
   display: flex;
 `;
 

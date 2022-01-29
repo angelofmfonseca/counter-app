@@ -1,7 +1,7 @@
 export const getTotalTimes = (count) => {
-  const onlyTimes = count?.map((times) => times.count);
-  const totalTimes = onlyTimes.reduce(
-    (previousValue, currentValue) => previousValue + currentValue
+  const totalTimes = count.reduce(
+    (previousValue, currentValue) => previousValue + currentValue.count,
+    0
   );
   return totalTimes;
 };
