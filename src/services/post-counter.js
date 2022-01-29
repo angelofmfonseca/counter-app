@@ -1,8 +1,12 @@
 import axios from 'axios';
 
-export const postCounter = () => {
-  axios
-    .post('/api/v1/counter', { title: 'paulo' })
-    .then((res) => res.data)
-    .catch((error) => console.log(`ERROR: ${error}`));
+const baseURL = '/api/v1/counter';
+
+export const postCounter = async () => {
+  try {
+    const res = await axios.post(baseURL, { title: 'buzios' });
+    return res;
+  } catch (error) {
+    console.log(`ERROR: ${error}`);
+  }
 };

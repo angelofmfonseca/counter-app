@@ -5,16 +5,26 @@ import ManageScreen from '../../components/organisms/ManageScreen';
 
 const MainScreen = () => {
   const [count, setCount] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({});
 
   useEffect(() => {
-    getCounter().then((count) => {
-      return setCount(count);
-    });
+    setLoading(true);
+    getCounter()
+      .then((count) => {
+        return setCount(count);
+      })
+      .catch((error) => {
+        return setError(error);
+      })
+      .finally(() => {
+        return setLoading(false);
+      });
   }, []);
 
   return (
     <Template>
-      <ManageScreen count={count} />
+      <ManageScreen count={count} loading={loading} error={error} />
     </Template>
   );
 };

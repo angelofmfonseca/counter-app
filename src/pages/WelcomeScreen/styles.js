@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -27,4 +28,8 @@ export const Title = styled.span`
 
 export const SubTitle = styled.p`
   text-align: center;
+`;
+
+export const NavLinkButton = styled(NavLink)`
+  text-decoration: none;
 `;

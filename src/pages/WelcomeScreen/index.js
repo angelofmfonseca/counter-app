@@ -13,7 +13,9 @@ const WelcomeScreen = () => {
           Capture cups of lattes, frapuccinos, or anything else that can be counted.
         </S.SubTitle>
       </S.TextWrapper>
-      <Button kind="raised">Get Started</Button>
+      <S.NavLinkButton to="/main">
+        <Button kind="raised">Get Started</Button>
+      </S.NavLinkButton>
     </S.Wrapper>
   );
 };
