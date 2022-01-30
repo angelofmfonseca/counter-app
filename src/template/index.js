@@ -12,7 +12,7 @@ const Template = ({ children, searchFilter, isSelectedItem }) => {
       <Search searchFilter={searchFilter} />
       <S.ChildrenWrapper>{children}</S.ChildrenWrapper>
       <S.AddCounterWrapper>
-        <S.BottomWrapper>
+        <S.BottomWrapper isSelectedItem={isSelectedItem}>
           {isSelectedItem ? (
             <S.DeleteWrapper onClick={''}>
               <Button color="white">

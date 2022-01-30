@@ -26,7 +26,7 @@ export const AddCounterWrapper = styled.section`
 
 export const BottomWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ isSelectedItem }) => (isSelectedItem ? 'space-between' : 'flex-end')};
 `;
 
 export const DeleteWrapper = styled.div``;
