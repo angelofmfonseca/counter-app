@@ -32,7 +32,7 @@ const renderContent = (count) => {
 const renderNoResults = () => {
   return (
     <S.NoResultsWrapper>
-      <Title title="No Results" color=" #888B90" fontSize="22px" fontWeight="500" />
+      <Title title="No Results" color="var(--grey)" fontSize="22px" fontWeight="500" />
     </S.NoResultsWrapper>
   );
 };

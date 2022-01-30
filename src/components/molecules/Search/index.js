@@ -44,7 +44,7 @@ const Search = ({ searchFilter }) => {
           color="white"
           style={{
             background: '#FBFBFB',
-            color: '#4A4A4A',
+            color: 'var(--black)',
             fontWeight: 600,
             fontZise: '17px',
             height: '44px'

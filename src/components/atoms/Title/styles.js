@@ -7,5 +7,4 @@ export const TitleText = styled.span`
       font-weight: ${fontWeight};
     `}
   line-height: 30px;
-  margin-bottom: 20px;
 `;

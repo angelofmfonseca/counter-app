@@ -29,7 +29,7 @@ const List = ({ eachCount }) => {
           <Item title={eachCount.title} />
           <S.CounterQuantity>
             <S.ButtonUI onClick={handleDecrement}>
-              <DecrementIcon fill={counter > 0 ? '#ff9500' : '#dcdcdf'} />
+              <DecrementIcon fill={counter > 0 ? 'var(--app-tint)' : 'var(--silver)'} />
             </S.ButtonUI>
             <Number count={counter} />
             <S.ButtonUI onClick={handleIncrement}>
