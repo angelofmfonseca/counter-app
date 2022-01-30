@@ -7,6 +7,6 @@ export const postDecrementCounter = async (id) => {
     const res = await axios.post(baseURL, { id: id });
     return res;
   } catch (error) {
-    console.log(`ERROR: ${error}`);
+    console.error(`ERROR: ${error}`);
   }
 };

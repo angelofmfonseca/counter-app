@@ -7,6 +7,6 @@ export const getCounter = async () => {
     const res = await axios.get(baseURL);
     return res;
   } catch (error) {
-    console.log(`ERROR: ${error}`);
+    console.error(`ERROR: ${error}`);
   }
 };

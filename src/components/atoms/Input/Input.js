@@ -5,15 +5,15 @@ import './Input.css';
 
 const InputSizeVariant = {
   Regular: 'regular',
-  Big: 'big',
+  Big: 'big'
 };
 
 const InputSizeClasses = {
   [InputSizeVariant.Regular]: '',
-  [InputSizeVariant.Big]: 'cs-input--big',
+  [InputSizeVariant.Big]: 'cs-input--big'
 };
 
-const Input = ({ className, size = InputSizeVariant.Regular, ...rest }) => {
+const Input = ({ className, ...rest }) => {
   const classes = classnames('cs-input', InputSizeClasses[InputSizeVariant], className);
 
   return <input className={classes} {...rest} />;

@@ -7,6 +7,6 @@ export const postCounter = async () => {
     const res = await axios.post(baseURL, { title: 'fernando de noronha' });
     return res;
   } catch (error) {
-    console.log(`ERROR: ${error}`);
+    console.error(`ERROR: ${error}`);
   }
 };
