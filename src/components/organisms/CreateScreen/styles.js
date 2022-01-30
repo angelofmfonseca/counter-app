@@ -48,3 +48,14 @@ export const ModalWrapper = styled.div`
   border-radius: 16px 16px 0px 0px;
   ${({ isModalOpened }) => isModalOpened && 'transform: translate3d(0, 0, 0)'};
 `;
+
+export const LoadingWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+`;

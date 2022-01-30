@@ -3,6 +3,5 @@ export const getTotalTimes = (count) => {
     (previousValue, currentValue) => previousValue + currentValue.count,
     0
   );
-  console.log('totalTimes: ', totalTimes);
   return totalTimes;
 };

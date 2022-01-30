@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CloseIcon } from '../../../assets/Icons';
+import { CreateCounterContext } from '../../../context/CreateCounter';
 import { Button } from '../../atoms/Button';
 import Title from '../../atoms/Title';
 import * as S from './styles';
 
-const ModalTop = ({ setIsModalOpened, isDisabledButton }) => {
+const ModalTop = ({ setIsModalOpened, isDisabledButton, addedItem }) => {
+  const [, setItem] = useContext(CreateCounterContext);
+
   const enableButton = isDisabledButton ? '0.5' : '1';
   return (
     <S.Wrapper>
@@ -12,7 +15,9 @@ const ModalTop = ({ setIsModalOpened, isDisabledButton }) => {
         <CloseIcon fill="var(--white)" />
       </S.IconBackground>
       <Title title="Create counter" fontSize="22px" fontWeight="600" />
-      <Button style={{ opacity: enableButton }}>Save</Button>
+      <Button style={{ opacity: enableButton }} onClick={() => setItem(addedItem)}>
+        Save
+      </Button>
     </S.Wrapper>
   );
 };

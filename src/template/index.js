@@ -5,7 +5,7 @@ import Search from '../components/molecules/Search';
 import CreateScreen from '../components/organisms/CreateScreen';
 import * as S from './styles';
 
-const Template = ({ children, searchFilter, isSelectedItem = true }) => {
+const Template = ({ children, searchFilter, isSelectedItem }) => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   return (
     <S.TemplateWrapper>
