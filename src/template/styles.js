@@ -20,5 +20,13 @@ export const AddCounterWrapper = styled.section`
   position: absolute;
   bottom: 32px;
   right: 32px;
+  left: 32px;
   flex: 0 0 auto;
 `;
+
+export const BottomWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const DeleteWrapper = styled.div``;

@@ -5,7 +5,6 @@ import Title from '../../atoms/Title';
 import * as S from './styles';
 
 const ModalTop = ({ setIsModalOpened, isDisabledButton }) => {
-  console.log('isDisabledButton: ', isDisabledButton);
   const enableButton = isDisabledButton ? '0.5' : '1';
   return (
     <S.Wrapper>
