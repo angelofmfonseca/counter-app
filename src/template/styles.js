@@ -6,21 +6,21 @@ export const TemplateWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 32px;
+  padding: 20px;
 `;
 
 export const ChildrenWrapper = styled.section`
   overflow: auto;
   flex: 1 1 100%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  margin: 20px 0 60px;
+  margin: 20px 0 50px;
 `;
 
 export const AddCounterWrapper = styled.section`
   position: absolute;
-  bottom: 32px;
-  right: 32px;
-  left: 32px;
+  bottom: 15px;
+  right: 15px;
+  left: 15px;
   flex: 0 0 auto;
 `;
 

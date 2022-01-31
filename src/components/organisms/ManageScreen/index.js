@@ -22,7 +22,7 @@ const renderContent = (count) => {
   return (
     <S.ContentWrapper>
       <ListTotal count={count} />
-      {count.map((eachCount) => (
+      {count?.map((eachCount) => (
         <ListItem key={eachCount.id} eachCount={eachCount} count={count} />
       ))}
     </S.ContentWrapper>

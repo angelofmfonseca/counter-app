@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './styles';
 
-const Title = ({ color, title, fontSize, fontWeight }) => {
+const Title = ({ textAlign, color, title, fontSize, fontWeight }) => {
   return (
-    <S.TitleText color={color} fontSize={fontSize} fontWeight={fontWeight}>
+    <S.TitleText textAlign={textAlign} color={color} fontSize={fontSize} fontWeight={fontWeight}>
       {title}
     </S.TitleText>
   );

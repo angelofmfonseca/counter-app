@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ManageScreen from './';
 
-jest.mock('../../../services/api/post-increment-counter.js', () => ({
+jest.mock('../../../services/api/post-increment-counter', () => ({
   postIncrementCounter: () => {}
 }));
 
-jest.mock('../../../services/api/post-decrement-counter.js', () => ({
+jest.mock('../../../services/api/post-decrement-counter', () => ({
   postDecrementCounter: () => {}
 }));
 

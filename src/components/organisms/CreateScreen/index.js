@@ -2,15 +2,18 @@ import React, { useState, useContext, useEffect } from 'react';
 import ModalTop from '../../molecules/ModalTop';
 import ModalContent from '../../molecules/ModalContent';
 import { Loading } from '../../atoms/Loading';
-import { CreateCounterContext } from '../../../context/CreateCounter';
+import { CreateCounterContext } from '../../../context/counter-context';
 import { postCounter } from '../../../services/api/post-counter';
+import { ModalContext } from '../../../context/modal-context';
 import * as S from './styles';
 
 const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
   const [isDisabledButton, setIsDisabledButton] = useState(true);
   const [addedItem, setAddedItem] = useState('');
   const [loading, setLoading] = useState(false);
+
   const [item, setItem] = useContext(CreateCounterContext);
+  const [, setModal] = useContext(ModalContext);
 
   useEffect(() => {
     if (item !== null) {
@@ -23,6 +26,12 @@ const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
         })
         .catch(() => {
           setLoading(false);
+          setModal({
+            title: `Couldn’t create counter`,
+            subtitle: 'The Internet connection appears to be offline.',
+            isOpen: true,
+            isSingleButton: true
+          });
         });
     }
   }, [item]);

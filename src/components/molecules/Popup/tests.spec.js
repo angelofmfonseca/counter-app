@@ -1,6 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ModalTop from './';
+import Popup from './';
+
+jest.mock('react');
+
+jest.mock('../../../context/modal-context', () => ({
+  ModalContext: () => [false, () => {}]
+}));
 
 jest.mock('../../atoms/Button', () => ({
   Button: () => <div>Button Atom Mock</div>
@@ -10,11 +16,13 @@ jest.mock('../../atoms/Title', () => ({
   Title: () => <div>Title Atom Mock</div>
 }));
 
-describe('ModalTop molecule Testing', () => {
+jest.mock('../../atoms/SubTitle', () => ({
+  SubTitle: () => <div>SubTitle Atom Mock</div>
+}));
+
+describe('Popup molecule Testing', () => {
   it('should render without any error', () => {
-    const wrapper = shallow(
-      <ModalTop setIsModalOpened={jest.fn()} isDisabledButton={false} addedItem={'cafe'} />
-    );
+    const wrapper = shallow(<Popup />);
 
     expect(wrapper.isEmptyRender()).toBe(false);
   });

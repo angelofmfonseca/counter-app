@@ -8,7 +8,8 @@ describe('Item atom Testing', () => {
       title: 'Item Title',
       color: '#000',
       fontSize: '22px',
-      fontWeight: 400
+      fontWeight: 400,
+      textAlign: 'center'
     };
     const wrapper = shallow(<Title {...props} />);
 

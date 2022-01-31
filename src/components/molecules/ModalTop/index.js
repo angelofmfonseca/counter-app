@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { CloseIcon } from '../../../assets/Icons';
-import { CreateCounterContext } from '../../../context/CreateCounter';
+import { CreateCounterContext } from '../../../context/counter-context';
 import { Button } from '../../atoms/Button';
 import Title from '../../atoms/Title';
 import * as S from './styles';
 
 const ModalTop = ({ setIsModalOpened, isDisabledButton, addedItem }) => {
   const [, setItem] = useContext(CreateCounterContext);
-
   const enableButton = isDisabledButton ? '0.5' : '1';
+
   return (
     <S.Wrapper>
       <S.IconBackground onClick={() => setIsModalOpened(false)}>

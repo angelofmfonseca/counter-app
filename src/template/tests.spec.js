@@ -10,6 +10,10 @@ jest.mock('../components/atoms/Input', () => ({
   Input: () => <div>Input Atom Mock</div>
 }));
 
+jest.mock('../components/atoms/Loading', () => ({
+  Loading: () => <div>Loading Atom Mock</div>
+}));
+
 describe('Template Testing', () => {
   it('should render without any error', () => {
     const wrapper = shallow(<Template />);

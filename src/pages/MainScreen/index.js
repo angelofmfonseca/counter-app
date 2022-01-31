@@ -5,7 +5,7 @@ import ManageScreen from '../../components/organisms/ManageScreen';
 import { Loading } from '../../components/atoms/Loading';
 import { Navigate } from 'react-router-dom';
 import * as S from './styles';
-import { CreateCounterContext } from '../../context/CreateCounter';
+import { CreateCounterContext } from '../../context/counter-context';
 
 const MainScreen = () => {
   const [count, setCount] = useState(null);

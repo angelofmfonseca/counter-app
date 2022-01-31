@@ -1,6 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ListWrapper = styled.div``;
+export const ListWrapper = styled.div`
+  padding: 10px;
+  ${({ isSelectedItem }) =>
+    css`
+      background: ${isSelectedItem && 'rgba(255, 149, 0, 0.2)'};
+      border-radius: ${isSelectedItem && '6px'};
+    `}
+`;
 
 export const ListItem = styled.span`
   width: 100%;
