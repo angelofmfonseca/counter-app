@@ -1,31 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ModalContext } from '../../../context/modal-context';
 import { SelectedContext } from '../../../context/selected-item';
 import { deleteCounter } from '../../../services/api/delete-counter';
 import Title from '../../atoms/Title';
 import SubTitle from '../../atoms/SubTitle';
 import { Button } from '../../atoms/Button';
+import { StateContext } from '../../../context/state-context';
 import * as S from './styles';
 
 const Popup = () => {
-  const [, setLoading] = useState(false);
   const [modal, setModal] = useContext(ModalContext);
   const [selectedItem, setSelectedItem] = useContext(SelectedContext);
+  const [state, setState] = useContext(StateContext);
 
   const handleDelete = () => {
     deleteCounter(selectedItem?.id)
       .then(() => {
-        setLoading(true);
         setModal({ isOpen: false });
         setSelectedItem(null);
       })
       .catch(() => {
-        setLoading(false);
         setModal({
           title: `Couldn’t delete "${modal?.title}"`,
           subtitle: 'The Internet connection appears to be offline.',
           isOpen: true
         });
+      })
+      .finally(() => {
+        setState({ ...state, get: true });
       });
   };
 

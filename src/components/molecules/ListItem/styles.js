@@ -18,9 +18,16 @@ export const ListItem = styled.span`
 `;
 
 export const ButtonUI = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ disabled }) =>
+    css`
+      ${disabled &&
+      css`
+        pointer-events: none;
+      `}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `}
 `;
 
 export const CounterQuantity = styled.div`

@@ -5,6 +5,7 @@ import { Loading } from '../../atoms/Loading';
 import { CreateCounterContext } from '../../../context/counter-context';
 import { postCounter } from '../../../services/api/post-counter';
 import { ModalContext } from '../../../context/modal-context';
+import { StateContext } from '../../../context/state-context';
 import * as S from './styles';
 
 const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
@@ -13,6 +14,7 @@ const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
   const [loading, setLoading] = useState(false);
   const [item, setItem] = useContext(CreateCounterContext);
   const [, setModal] = useContext(ModalContext);
+  const [state, setState] = useContext(StateContext);
 
   useEffect(() => {
     if (item !== null) {
@@ -26,11 +28,14 @@ const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
         .catch(() => {
           setLoading(false);
           setModal({
-            title: `Couldn’t create counter.`,
+            title: `Couldn’t create counter`,
             subtitle: 'The Internet connection appears to be offline.',
             isOpen: true,
             isSingleButton: true
           });
+        })
+        .finally(() => {
+          setState({ ...state, get: true });
         });
     }
   }, [item]);

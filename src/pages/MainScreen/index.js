@@ -4,8 +4,7 @@ import { getCounter } from '../../services/api/get-counter';
 import ManageScreen from '../../components/organisms/ManageScreen';
 import { Loading } from '../../components/atoms/Loading';
 import { Navigate } from 'react-router-dom';
-import { CreateCounterContext } from '../../context/counter-context';
-import { SelectedContext } from '../../context/selected-item';
+import { StateContext } from '../../context/state-context';
 import * as S from './styles';
 
 const MainScreen = () => {
@@ -13,8 +12,7 @@ const MainScreen = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
   const [filterValue, setFilterValue] = useState([]);
-  const [item] = useContext(CreateCounterContext);
-  const [selectedItem] = useContext(SelectedContext);
+  const [state, setState] = useContext(StateContext);
 
   const searchFilter = (value) => {
     if (count !== null) {
@@ -28,42 +26,22 @@ const MainScreen = () => {
     setFilterValue(count?.data);
   }, [count]);
 
-  const remainCounters = count?.data.filter((counters) => {
-    return counters.id !== selectedItem?.id;
-  });
-  console.log('remainCounters: ', remainCounters);
-
   useEffect(() => {
-    if (selectedItem !== null) {
-      setLoading(true);
-      getCounter()
-        .then(() => {
-          return setCount(remainCounters);
-        })
-        .catch((error) => {
-          return setError(error);
-        })
-        .finally(() => {
-          return setLoading(false);
-        });
-    }
-  }, [item]);
-
-  useEffect(() => {
-    if (item === null) {
+    if (state.get) {
       setLoading(true);
       getCounter()
         .then((count) => {
-          return setCount(count);
+          setCount(count);
         })
         .catch((error) => {
-          return setError(error);
+          setError(error);
         })
         .finally(() => {
-          return setLoading(false);
+          setLoading(false);
+          setState({ ...state, get: false });
         });
     }
-  }, [item]);
+  }, [state.get]);
 
   if (count?.status !== 200 && count !== null) {
     return <Navigate to="/error" />;

@@ -28,7 +28,7 @@ const List = ({ eachCount }) => {
       <S.ListItem>
         <Item title={eachCount.title} onClick={() => setSelectedItem({ ...eachCount })} />
         <S.CounterQuantity>
-          <S.ButtonUI onClick={handleDecrement}>
+          <S.ButtonUI onClick={handleDecrement} disabled={counter <= 0}>
             <DecrementIcon fill={counter > 0 ? 'var(--app-tint)' : 'var(--silver)'} />
           </S.ButtonUI>
           <Number count={counter} />
