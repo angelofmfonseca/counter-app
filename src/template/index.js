@@ -4,28 +4,28 @@ import { IncrementIcon, TrashBinIcon } from '../assets/Icons';
 import Search from '../components/molecules/Search';
 import CreateScreen from '../components/organisms/CreateScreen';
 import { ModalContext } from '../context/modal-context';
-import { DeleteContext } from '../context/delete-item';
+import { SelectedContext } from '../context/selected-item';
 import Popup from '../components/molecules/Popup';
 import * as S from './styles';
 
-const Template = ({ children, searchFilter, isSelectedItem }) => {
+const Template = ({ children, searchFilter }) => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [, setModal] = useContext(ModalContext);
-  const [deleteItem] = useContext(DeleteContext);
+  const [selectedItem] = useContext(SelectedContext);
 
   return (
     <S.TemplateWrapper>
       <Search searchFilter={searchFilter} />
       <S.ChildrenWrapper>{children}</S.ChildrenWrapper>
       <S.AddCounterWrapper>
-        <S.BottomWrapper isSelectedItem={isSelectedItem}>
-          {isSelectedItem ? (
+        <S.BottomWrapper isSelectedItem={!!selectedItem}>
+          {selectedItem ? (
             <S.DeleteWrapper>
               <Button
                 color="white"
                 onClick={() =>
                   setModal({
-                    title: `Delete the "${deleteItem.title}" counter?`,
+                    title: `Delete the "${selectedItem.title}" counter?`,
                     subtitle: 'This cannot be undone.',
                     isOpen: true
                   })

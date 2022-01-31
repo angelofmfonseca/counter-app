@@ -11,7 +11,6 @@ const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
   const [isDisabledButton, setIsDisabledButton] = useState(true);
   const [addedItem, setAddedItem] = useState('');
   const [loading, setLoading] = useState(false);
-
   const [item, setItem] = useContext(CreateCounterContext);
   const [, setModal] = useContext(ModalContext);
 
@@ -27,7 +26,7 @@ const CreateScreen = ({ isModalOpened, setIsModalOpened }) => {
         .catch(() => {
           setLoading(false);
           setModal({
-            title: `Couldn’t create counter`,
+            title: `Couldn’t create counter.`,
             subtitle: 'The Internet connection appears to be offline.',
             isOpen: true,
             isSingleButton: true

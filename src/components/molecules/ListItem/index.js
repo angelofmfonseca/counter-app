@@ -5,13 +5,13 @@ import IncrementIcon from '../../../assets/Icons/IncrementIcon';
 import DecrementIcon from '../../../assets/Icons/DecrementIcon';
 import { postIncrementCounter } from '../../../services/api/post-increment-counter';
 import { postDecrementCounter } from '../../../services/api/post-decrement-counter';
-import { DeleteContext } from '../../../context/delete-item';
+import { SelectedContext } from '../../../context/selected-item';
 import * as S from './styles';
 
 const List = ({ eachCount }) => {
   const [counter, setCounter] = useState(eachCount.count);
 
-  const [deleteItem, setDeleteItem] = useContext(DeleteContext);
+  const [selectedItem, setSelectedItem] = useContext(SelectedContext);
 
   const handleDecrement = () => {
     setCounter(counter - 1);
@@ -24,9 +24,9 @@ const List = ({ eachCount }) => {
   };
 
   return (
-    <S.ListWrapper isSelectedItem={deleteItem?.id === eachCount?.id}>
+    <S.ListWrapper isSelectedItem={selectedItem?.id === eachCount?.id}>
       <S.ListItem>
-        <Item title={eachCount.title} onClick={() => setDeleteItem({ ...eachCount })} />
+        <Item title={eachCount.title} onClick={() => setSelectedItem({ ...eachCount })} />
         <S.CounterQuantity>
           <S.ButtonUI onClick={handleDecrement}>
             <DecrementIcon fill={counter > 0 ? 'var(--app-tint)' : 'var(--silver)'} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CreateContextProvider } from './context/counter-context';
-import { DeleteContextProvider } from './context/delete-item';
+import { SelectedContextProvider } from './context/selected-item';
 import { ModalContextProvider } from './context/modal-context';
 import Router from './routes';
 import * as S from './styles';
@@ -10,9 +10,9 @@ const App = () => {
     <S.MainWrapper>
       <CreateContextProvider>
         <ModalContextProvider>
-          <DeleteContextProvider>
+          <SelectedContextProvider>
             <Router />
-          </DeleteContextProvider>
+          </SelectedContextProvider>
         </ModalContextProvider>
       </CreateContextProvider>
     </S.MainWrapper>

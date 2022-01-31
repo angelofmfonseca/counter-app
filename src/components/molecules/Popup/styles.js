@@ -36,7 +36,7 @@ export const PopupBackground = styled.section`
 `;
 
 export const PopupWrapper = styled.div`
-  padding: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
