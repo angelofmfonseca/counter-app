@@ -14,7 +14,7 @@ const Search = ({ searchFilter }) => {
   const debouncedValue = useDebounce(term, delay);
 
   useEffect(() => {
-    searchFilter && searchFilter(debouncedValue);
+    searchFilter(debouncedValue);
   }, [debouncedValue]);
 
   const handleFocus = () => {
