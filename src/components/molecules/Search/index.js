@@ -27,16 +27,18 @@ const Search = ({ searchFilter }) => {
 
   return (
     <S.SearchWrapper>
-      <S.IconWrapper>
-        <SearchIcon fill="var(--grey)" />
-      </S.IconWrapper>
-      <Input
-        value={term}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        placeholder="Search Counters"
-        style={{ paddingLeft: '40px' }}
-      />
+      <S.InputWrapper>
+        <S.IconWrapper>
+          <SearchIcon fill="var(--grey)" />
+        </S.IconWrapper>
+        <Input
+          value={term}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          placeholder="Search Counters"
+          style={{ paddingLeft: '40px' }}
+        />
+      </S.InputWrapper>
       <S.CancelWrapper focus={focus}>
         <Button
           onClick={() => setTerm('')}

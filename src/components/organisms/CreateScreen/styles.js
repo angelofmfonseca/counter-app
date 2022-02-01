@@ -53,7 +53,8 @@ export const ModalWrapper = styled.div`
     border-radius: 16px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(0, 100%, 0);
+    ${({ isModalOpened }) => isModalOpened && 'transform: translate(-50%, -50%)'}
   }
 `;
 

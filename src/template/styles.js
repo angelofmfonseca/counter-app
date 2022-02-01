@@ -21,8 +21,6 @@ export const TemplateWrapper = styled.div`
 export const ChildrenWrapper = styled.section`
   overflow: auto;
   flex: 1 1 100%;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  margin: 20px 0 50px;
 `;
 
 export const AddCounterWrapper = styled.section`
@@ -31,6 +29,8 @@ export const AddCounterWrapper = styled.section`
   right: 15px;
   left: 15px;
   flex: 0 0 auto;
+  padding-top: 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const BottomWrapper = styled.div`
