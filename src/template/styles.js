@@ -46,4 +46,5 @@ export const IconWrapper = styled.div`
 
 export const OptionsWrapper = styled.div`
   display: flex;
+  position: relative;
 `;

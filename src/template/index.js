@@ -7,10 +7,12 @@ import CreateScreen from '../components/organisms/CreateScreen';
 import { ModalContext } from '../context/modal-context';
 import { SelectedContext } from '../context/selected-item';
 import Popup from '../components/molecules/Popup';
+import ShareTooltip from '../components/molecules/ShareTooltip';
 import * as S from './styles';
 
 const Template = ({ children, searchFilter }) => {
   const [isModalOpened, setIsModalOpened] = useState(false);
+  const [isTooltipOpened, setIsTooltipOpened] = useState(false);
   const [, setModal] = useContext(ModalContext);
   const [selectedItem] = useContext(SelectedContext);
 
@@ -33,8 +35,13 @@ const Template = ({ children, searchFilter }) => {
                 }>
                 <TrashBinIcon fill="var(--destructive-red)" />
               </Button>
+              {isTooltipOpened ? <ShareTooltip /> : null}
               <S.IconWrapper>
-                <Button color="white" onClick={() => {}}>
+                <Button
+                  color="white"
+                  onClick={() => {
+                    setIsTooltipOpened(true);
+                  }}>
                   <ShareIcon width="25px" fill="#2b2b2b" />
                 </Button>
               </S.IconWrapper>
