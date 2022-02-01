@@ -12,8 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "jest",
-    "build": "react-scripts build"
+    "test": "jest"
   },
   "author": "Cornershop",
   "license": "ISC",
