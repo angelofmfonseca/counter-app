@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button } from '../components/atoms/Button';
 import { IncrementIcon, TrashBinIcon } from '../assets/Icons';
+import { ReactComponent as ShareIcon } from '../assets/Icons/ShareIcon.svg';
 import Search from '../components/molecules/Search';
 import CreateScreen from '../components/organisms/CreateScreen';
 import { ModalContext } from '../context/modal-context';
@@ -32,6 +33,11 @@ const Template = ({ children, searchFilter }) => {
                 }>
                 <TrashBinIcon fill="var(--destructive-red)" />
               </Button>
+              <S.IconWrapper>
+                <Button color="white" onClick={() => {}}>
+                  <ShareIcon width="25px" fill="#2b2b2b" />
+                </Button>
+              </S.IconWrapper>
             </S.OptionsWrapper>
           ) : null}
           <Button onClick={() => setIsModalOpened(true)}>

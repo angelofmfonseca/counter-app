@@ -5,6 +5,7 @@ export const SearchWrapper = styled.section`
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 `;
 
 export const IconWrapper = styled.div`

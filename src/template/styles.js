@@ -38,4 +38,12 @@ export const BottomWrapper = styled.div`
   justify-content: ${({ isSelectedItem }) => (isSelectedItem ? 'space-between' : 'flex-end')};
 `;
 
-export const OptionsWrapper = styled.div``;
+export const IconWrapper = styled.div`
+  width: 71px;
+  height: 40px;
+  margin-left: 10px;
+`;
+
+export const OptionsWrapper = styled.div`
+  display: flex;
+`;
