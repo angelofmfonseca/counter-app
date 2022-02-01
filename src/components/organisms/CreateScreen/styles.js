@@ -34,12 +34,12 @@ export const ModalBackground = styled.section`
 `;
 
 export const ModalWrapper = styled.div`
+  background: #fff;
   overflow-y: auto;
   position: fixed;
-  background: #fff;
+  z-index: 3;
   left: 0;
   bottom: 0;
-  z-index: 3;
   width: 100%;
   height: calc(100% - 15px);
   transition: transform 0.45s cubic-bezier(0, 0, 0.3, 1);
@@ -47,6 +47,14 @@ export const ModalWrapper = styled.div`
   transform: translate3d(0, 100%, 0);
   border-radius: 16px 16px 0px 0px;
   ${({ isModalOpened }) => isModalOpened && 'transform: translate3d(0, 0, 0)'};
+  @media (min-width: 600px) {
+    width: 485px;
+    height: 612px;
+    border-radius: 16px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const LoadingWrapper = styled.div`

@@ -20,7 +20,7 @@ const Template = ({ children, searchFilter }) => {
       <S.AddCounterWrapper>
         <S.BottomWrapper isSelectedItem={!!selectedItem}>
           {selectedItem ? (
-            <S.DeleteWrapper>
+            <S.OptionsWrapper>
               <Button
                 color="white"
                 onClick={() =>
@@ -32,7 +32,7 @@ const Template = ({ children, searchFilter }) => {
                 }>
                 <TrashBinIcon fill="var(--destructive-red)" />
               </Button>
-            </S.DeleteWrapper>
+            </S.OptionsWrapper>
           ) : null}
           <Button onClick={() => setIsModalOpened(true)}>
             <IncrementIcon fill="var(--white)" />

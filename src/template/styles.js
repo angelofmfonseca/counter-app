@@ -7,6 +7,15 @@ export const TemplateWrapper = styled.div`
   flex-direction: column;
   position: relative;
   padding: 20px;
+  @media (min-width: 600px) {
+    width: 570px;
+    margin: 0 auto;
+    }
+  @media (min-width: 900px) {
+    width: 750px;
+    margin: 0 auto;
+    }
+  }
 `;
 
 export const ChildrenWrapper = styled.section`
@@ -29,4 +38,4 @@ export const BottomWrapper = styled.div`
   justify-content: ${({ isSelectedItem }) => (isSelectedItem ? 'space-between' : 'flex-end')};
 `;
 
-export const DeleteWrapper = styled.div``;
+export const OptionsWrapper = styled.div``;
