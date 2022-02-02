@@ -8,6 +8,14 @@ jest.mock('../../../context/modal-context', () => ({
   ModalContext: () => [false, () => {}]
 }));
 
+jest.mock('../../../context/selected-item', () => ({
+  SelectedContext: () => [false, () => {}]
+}));
+
+jest.mock('../../../context/state-context', () => ({
+  StateContext: () => [false, () => {}]
+}));
+
 jest.mock('../../atoms/Button', () => ({
   Button: () => <div>Button Atom Mock</div>
 }));

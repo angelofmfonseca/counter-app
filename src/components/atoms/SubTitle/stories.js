@@ -6,6 +6,13 @@ export default {
   component: SubTitle,
   args: {
     subtitle: 'Item subtitle'
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Any subtitle of the project'
+      }
+    }
   }
 };
 

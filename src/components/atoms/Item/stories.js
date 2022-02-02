@@ -7,6 +7,13 @@ export default {
   args: { title: 'Item' },
   argTypes: {
     onClick: { action: 'onClick', control: null }
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Name of the counter'
+      }
+    }
   }
 };
 

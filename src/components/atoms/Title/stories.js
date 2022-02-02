@@ -6,6 +6,13 @@ export default {
   component: Title,
   args: {
     title: 'Item title'
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Any title of the project'
+      }
+    }
   }
 };
 

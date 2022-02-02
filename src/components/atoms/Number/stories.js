@@ -6,6 +6,13 @@ export default {
   component: Number,
   args: {
     count: 3
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Quantity of the counter'
+      }
+    }
   }
 };
 
