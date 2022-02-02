@@ -16,7 +16,7 @@ After deciding on using Atomic Design, another important decision was the struct
 
 ### Storybook:
 
-I mentioned stories, because that was an extra feature that I tried to use in the project was Storybook, which I personally like, because **it helps a lot in the development of UI components and in tests, Storybook make crystal clear what the exact responsibility of each component and works perfectly fine with Atomic Design and also works as a documentation**.
+I've mentioned stories, because that was an extra feature that I tried to use in the project was Storybook, which I personally like, because **it helps a lot in the development of UI components and in tests, Storybook make crystal clear what the exact responsibility of each component and works perfectly fine with Atomic Design and also works as a documentation**.
 
 ### Jest and Enzyme:
 
