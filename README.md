@@ -1,143 +1,38 @@
 # Cornershop Frontend Test v1.5.0
 
-#### ⚠️ Before you begin
+## Development Process:
 
-> Create a new git repository on the root of this folder, upload it to Github on a **private** repository and invite your contact from HR.
+### Design Pattern:
 
-If you are from **Chile** please invite [@inge-yang](https://github.com/inge-yang)
+The test was very interesting and challenging in the sense of being able to deal with the one week deadline and my current job tasks, but I managed to finish the challenge.
 
-If you are from **México** plese invite [@dankols](https://github.com/dankols)
+After receiving the challenge, the first thing I did was analyze the requirements to develop the project and then install and configure everything. After that, I stopped to analyze the flow and, as React consists in a library focused on componentization, the more and better componentized the application is, the better it will be for React to handle and the result will be a performance increase.
 
-If you are from **Colombia** plese invite [@javitormoparker](https://github.com/javitormoparker)
+With that in mind, I chose to use **Atomic Design** as the Design Pattern for the project. **As a result, the structure was well componentized and responsibilities well divided, which made the code very reusable throughout the development process**.
 
-If you are from **Brazil** plese invite [@alecornershop](https://github.com/alecornershop)
+### Structure:
 
-In **every case** please add [@cornershop-hr](https://github.com/cornershop-hr) as collaborators.
+After deciding on using Atomic Design, another important decision was the structure of the code throughout the project, so for all UI components, I started with a structure in which **each component has its own folder containing its respective index, styles, tests and stories**, therefore it would be easier to locate myself throughout the project. For example, if I needed to change the Button, I just had to access its folder and, inside it, would be all the code relevant to the Button.
 
-## Overview
+### Storybook:
 
-You have been commissioned to implement a counter application following the design specs provided [here](https://www.figma.com/file/6CnuM0Gj9oiwi2AV9vXLRH/Counters-for-the-web?node-id=0%3A1).
+I mentioned stories, because that was an extra feature that I tried to use in the project was Storybook, which I personally like, because **it helps a lot in the development of UI components and in tests, Storybook make crystal clear what the exact responsibility of each component and works perfectly fine with Atomic Design and also works as a documentation**.
 
-The application consists of several screens where each screen has one or multiple states that you will have to implement following the design specs the best you can.
+### Jest and Enzyme:
 
-We have provided starter boilerplate so you can write your application without any hassle and also a NodeJS dummy backend with all the neccessary endpoints to persist the data.
+As for **testing**, I chose to use Jest and Enzyme, as I use them daily in my current job, so I'm more familiar with them.
 
-We've also provided a few UI components and basic styling rules so you can focus solely on implementing the screens the best you can. Here's a list of all the things included:
-- Alert
-- Button
-- Icons
-- Loading
-- Modal
-- Text Input
+### Styled-Components:
 
-> These components are just a starting spot, so if you need to change them in any form or fashion (or add more), feel free to do it.
+For **styling**, my choice was Styled-Components, because I think it completes the architecture that I chose for the project, in addition to **allowing me to work with logic in the styles and because it makes it easier for someone else to read the code later**. For example, when creating a style component and choosing a very assertive nomenclature, anyone who stops to analyze the code will understand what that respective component tag is for. In other words, it's easier to understand the purpose of a tag when it's called "ButtonWrapper" than if it's just a div or a section.
 
-For bootstrapping the frontend application we're using `react-scripts`, so as you might have guessed you **must** use React (it's our primary view layer for frontend applications here at Cornershop).
+### Context API:
 
-> Note: This is NOT a backend test. Don't make it require any databases. Don't touch the server folder. Just leave it as it is.
+With the use of Atomic Design and the responsibilities well separated, the flow and sharing of information becomes simple. So, for **state management**, my choice was Context, which a simple syntax and workflow.
 
-## Requirements
+As I`ve mentioned, because of the Atomic Design Pattern, I could avoid prop drilling and all the props and information that was shared between a group of components was passed just for one or two levels bellow, therefore I was able to avoid having to put "everything" in the state (which would be a bad practice) and the use of Context was only necessary in some cases when the information was more global and used in diferent places of the application.
 
-Your submission will be evaluated considering the following criterias:
+> Conclusion:
+> I've tried to deliver every single requirements of the assessment by using good pratice during the entire development process to show you a bit of what I know, of what I can do and of how my developing process is, and only a few things ended up not being developed in this project due to the little time left, since I had to reconcile the challenge with my current work, but I'm very satisfied with the result and I intend to continue evolving the project and evolving what it already has, as well as implementing new features.
 
-- Feature completion.
-  - All features must be implemented for a perfect score.
-- Faithful implementation of the challenge.
-  - Follow the design spec as close as you can.
-- Good architecture and software design.
-  - _Hint:_ Usage of design patterns, good code organization, separation of concerns, etc. 
-- Use of best practices when writing code.
-  - _Hint:_ Idiomatic & readable code, good use of composition, DRY, etc.
-- The application must persist data back to the server.
-- Good management of state using built-in React features or third party dependencies (context, `redux`, `mobx`, `xstate` or whatever you might like).
-- You must include tests.
-  - Behavior tests are perfect.
-- Your project must be self-contained (make sure you're not using global dependencies).
-- **Last but not least**, we would love to understand your thought process, so writing a little summary of your choices, what you did and how you solved the test is required (write it here on this README file).
-
-Other things to consider:
-- For styling you can use whatever CSS flavor you want: plane old CSS, SASS, LESS, CSS-in-JS, CSS modules, everything is allowed.
-- Please consider that we expect your solution to be production-ready. In other words, that millions of users would be thrilled to use your product.
-- You can use whatever dependencies/libraries you want, the only requirement dependency-wise is to use React
-
-## Getting started
-
-First and foremost, make sure you have `node` and `npm` (or `yarn`) installed on your machine, then run:
-
-```bash
-$ npm install
-$ npm start
-```
-
-For `yarn` users:
-
-```bash
-$ yarn
-$ yarn start
-```
-
-## API endpoints / examples
-
-Since the backend API runs locally on a different port (`3001`) than the `react-scripts` dev server (`3000`), we have setup a proxy so you don't have to do anything special to consume the API (fetching data from `/api/v1/counter` will do).
-
-> The following endpoints are expecting a `Content-Type: application/json` header.
-
-#### **GET** `/api/v1/counter`.
-
-_Fetch a list of counters._
-```javascript
-/* Response */
-[]
-```
-
-#### **POST** `/api/v1/counter`.
-
-_Adds a counter._
-
-```javascript
-/* Body */
-{ title: "bob" }
-
-/* Response */
-{ id: "asdf", title: "bob", count: 0 }
-```
-
-#### **POST** `/api/v1/counter/inc`
-_Increments the value of a counter._
-```javascript
-/* Body */
-{ id: "asdf" }
-
-/* Response */
-{ id: "asdf", title: "bob", count: 1 }
-```
-
-#### **POST** `/api/v1/counter/dec`
-_Decrements the value of a counter._
-
-```javascript
-/* Body */
-{ id: "asdf" }
-
-/* Response */
-{ id: "asdf", title: "bob", count: 0 }
-```
-
-#### **DELETE** `/api/v1/counter`
-_Deletes a counter._
-
-```javascript
-/* Body */
-{ id: "qwer" }
-
-/* Response */
-"qwer" // The id of the deleted counter
-```
----
-
-Good luck! 🎉
-
-We hope your submission is… to die for.
-
-![Coffin dance](coffin.gif)
-# counter-app
+Hope to hear some great news from you soon.
