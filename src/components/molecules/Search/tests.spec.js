@@ -11,8 +11,17 @@ jest.mock('../../atoms/Button', () => ({
 }));
 
 describe('Search molecule Testing', () => {
-  it('should render without any error', () => {
-    const wrapper = shallow(<Search searchFilter={jest.fn()} />);
+  it('should render without any error without delay', () => {
+    const wrapper = shallow(
+      <Search searchFilter={jest.fn()} setTerm={jest.fn()} setFocus={jest.fn()} />
+    );
+
+    expect(wrapper.isEmptyRender()).toBe(false);
+  });
+  it('should render without any error with delay', () => {
+    const wrapper = shallow(
+      <Search searchFilter={jest.fn()} setTerm={jest.fn()} setFocus={jest.fn()} />
+    );
 
     expect(wrapper.isEmptyRender()).toBe(false);
   });

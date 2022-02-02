@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -118,21 +118,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -161,28 +161,28 @@ import { postDecrementCounter } from '../../../services/api/post-decrement-count
 import { SelectedContext } from '../../../context/selected-item';
 import * as S from './styles';
 &nbsp;
-const List = ({ eachCount }) =&gt; {
-  const [counter, setCounter] = useState(eachCount.count);
+const List = <span class="fstat-no" title="function not covered" >({</span> eachCount }) =&gt; {
+  const [counter, setCounter] = <span class="cstat-no" title="statement not covered" >useState(eachCount.count);</span>
 &nbsp;
-  const [selectedItem, setSelectedItem] = useContext(SelectedContext);
+  const [selectedItem, setSelectedItem] = <span class="cstat-no" title="statement not covered" >useContext(SelectedContext);</span>
 &nbsp;
-  const handleDecrement = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  const handleDecrement = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setCounter(counter - 1);</span>
 <span class="cstat-no" title="statement not covered" >    postDecrementCounter(eachCount.id);</span>
   };
 &nbsp;
-  const handleIncrement = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  const handleIncrement = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setCounter(counter + 1);</span>
 <span class="cstat-no" title="statement not covered" >    postIncrementCounter(eachCount.id);</span>
   };
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;S.ListWrapper isSelectedItem={selectedItem?.id === eachCount?.id}&gt;
       &lt;S.ListItem&gt;
         &lt;Item title={eachCount.title} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setSelectedItem({ ...eachCount })}</span> /&gt;
         &lt;S.CounterQuantity&gt;
-          &lt;S.ButtonUI onClick={handleDecrement}&gt;
-            &lt;DecrementIcon fill={counter &gt; 0 ? 'var(--app-tint)' : <span class="branch-1 cbranch-no" title="branch not covered" >'var(--silver)'}</span> /&gt;
+          &lt;S.ButtonUI onClick={handleDecrement} disabled={counter &lt;= 0}&gt;
+            &lt;DecrementIcon fill={counter &gt; 0 ? 'var(--app-tint)' : 'var(--silver)'} /&gt;
           &lt;/S.ButtonUI&gt;
           &lt;Number count={counter} /&gt;
           &lt;S.ButtonUI onClick={handleIncrement}&gt;
@@ -202,7 +202,7 @@ export default List;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jan 31 2022 14:15:40 GMT-0300 (GMT-03:00)
+                at Tue Feb 01 2022 19:54:58 GMT-0300 (GMT-03:00)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

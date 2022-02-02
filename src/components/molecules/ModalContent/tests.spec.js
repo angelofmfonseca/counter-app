@@ -9,6 +9,7 @@ jest.mock('../../atoms/Input', () => ({
 jest.mock('../../atoms/Title', () => ({
   Title: () => <div>Title Atom Mock</div>
 }));
+
 describe('ModalContent molecule Testing', () => {
   it('should render without any error', () => {
     const wrapper = shallow(<ModalContent setIsDisabledButton={false} setAddedItem={jest.fn()} />);

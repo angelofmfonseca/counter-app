@@ -12,7 +12,6 @@ const renderNoContent = () => {
       <SubTitle
         subtitle="'When I started counting my blessings, my whole life turned around.'
           —Willie Nelson"
-        fontSize="17px"
       />
     </S.NoContentWrapper>
   );

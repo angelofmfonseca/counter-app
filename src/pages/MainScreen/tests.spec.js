@@ -14,15 +14,15 @@ jest.mock('../../components/atoms/Loading', () => ({
   Loading: () => <div>Loading Atom Mock</div>
 }));
 
-jest.mock('../../services/api/get-counter.js', () => ({
+jest.mock('../../services/api/get-counter', () => ({
   getCounter: () => {}
 }));
 
-jest.mock('../../services/api/post-increment-counter.js', () => ({
+jest.mock('../../services/api/post-increment-counter', () => ({
   postIncrementCounter: () => {}
 }));
 
-jest.mock('../../services/api/post-decrement-counter.js', () => ({
+jest.mock('../../services/api/post-decrement-counter', () => ({
   postDecrementCounter: () => {}
 }));
 

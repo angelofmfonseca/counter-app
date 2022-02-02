@@ -11,9 +11,26 @@ jest.mock('../../atoms/Title', () => ({
 }));
 
 describe('ModalTop molecule Testing', () => {
-  it('should render without any error', () => {
+  it('should render without any error when isDisabledButton prop is false', () => {
     const wrapper = shallow(
-      <ModalTop setIsModalOpened={jest.fn()} isDisabledButton={false} addedItem={'cafe'} />
+      <ModalTop
+        setIsModalOpened={jest.fn()}
+        isDisabledButton={false}
+        setItem={jest.fn()}
+        addedItem={'cafe'}
+      />
+    );
+
+    expect(wrapper.isEmptyRender()).toBe(false);
+  });
+  it('should render without any error when isDisabledButton prop is true', () => {
+    const wrapper = shallow(
+      <ModalTop
+        setIsModalOpened={jest.fn()}
+        isDisabledButton={true}
+        setItem={jest.fn()}
+        addedItem={'cafe'}
+      />
     );
 
     expect(wrapper.isEmptyRender()).toBe(false);

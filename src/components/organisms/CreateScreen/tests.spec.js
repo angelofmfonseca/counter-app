@@ -15,6 +15,10 @@ jest.mock('../../atoms/Loading', () => ({
 }));
 
 describe('CreateScreen organism Testing', () => {
+  beforeEach(() => {
+    jest.spyOn(React, 'useEffect').mockImplementationOnce((ue) => ue());
+  });
+
   it('should render without any error', () => {
     const wrapper = shallow(<CreateScreen />);
 

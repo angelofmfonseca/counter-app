@@ -4,7 +4,7 @@ import { Input } from '../../atoms/Input';
 import * as S from './styles';
 
 const ModalContent = ({ setIsDisabledButton, setAddedItem }) => {
-  const handleClick = (e) => {
+  const handleChange = (e) => {
     setIsDisabledButton(false);
     setAddedItem(e.target.value);
   };
@@ -12,7 +12,7 @@ const ModalContent = ({ setIsDisabledButton, setAddedItem }) => {
   return (
     <S.Wrapper>
       <Title title="Name" fontSize="17px" fontWeight="500" />
-      <Input placeholder="Cups of coffee" onChange={handleClick} />
+      <Input placeholder="Cups of coffee" onChange={handleChange} />
       <S.ExampleLink>Give it a name. Creative block? See examples.</S.ExampleLink>
     </S.Wrapper>
   );
